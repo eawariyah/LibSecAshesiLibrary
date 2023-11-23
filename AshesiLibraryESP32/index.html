@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashesi Koha Library Management System</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 8px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Libsec-Warren Management System</h1>
+
+    <div>
+      <label for="bookRFID">Book RFID:</label>
+      <input type="text" id="bookRFID" />
+      <button onclick="addBook()">Add Book</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Book RFID</th>
+          <th>Approval</th>
+          <th>Buzzer Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="bookList"></tbody>
+    </table>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+    <script>
+      const firebaseConfig = {
+            ////[Very important]: I have put the values in the whatsapp group
+      };
+
+      firebase.initializeApp(firebaseConfig);
+      const database = firebase.database();
+
+      function addBook() {
+        const bookRFID = document.getElementById("bookRFID").value;
+        if (!bookRFID) {
+          alert("Please enter a valid Book RFID");
+          return;
+        }
+
+        database.ref(`LibraryRecords/${bookRFID}`).set({
+          approval: false,
+          buzzerStatus: false,
+        });
+
+        document.getElementById("bookRFID").value = "";
+        displayBooks();
+      }
+
+      function displayBooks() {
+        const bookListTable = document.getElementById("bookList");
+        bookListTable.innerHTML = "";
+
+        database
+          .ref("LibraryRecords")
+          .once("value")
+          .then((snapshot) => {
+            snapshot.forEach((book) => {
+              const bookData = book.val();
+              const row = document.createElement("tr");
+              row.innerHTML = `
+                            <td>${book.key}</td>
+                            <td>${bookData.approval}</td>
+                            <td>${bookData.buzzerStatus}</td>
+                            <td>
+                              <button onclick="editBook('${book.key}', ${bookData.approval}, ${bookData.buzzerStatus})">Edit</button>
+                              <button onclick="deleteBook('${book.key}')">Delete</button>
+                            </td>
+                        `;
+              bookListTable.appendChild(row);
+            });
+          });
+      }
+
+      function editBook(bookRFID, currentApproval, currentBuzzerStatus) {
+        const newApproval = prompt(
+          `Current Approval: ${currentApproval}\nEnter new Approval:`
+        );
+        const newBuzzerStatus = prompt(
+          `Current Buzzer Status: ${currentBuzzerStatus}\nEnter new Buzzer Status:`
+        );
+
+        if (newApproval !== null && newBuzzerStatus !== null) {
+          database.ref(`LibraryRecords/${bookRFID}`).update({
+            approval: newApproval === "true",
+            buzzerStatus: newBuzzerStatus === "true",
+          });
+
+          displayBooks();
+        }
+      }
+
+      function deleteBook(bookRFID) {
+        if (
+          confirm(
+            `Are you sure you want to delete the book with RFID: ${bookRFID}?`
+          )
+        ) {
+          database.ref(`LibraryRecords/${bookRFID}`).remove();
+          displayBooks();
+        }
+      }
+
+      // Initial display of books
+      displayBooks();
+    </script>
+  </body>
+</html>

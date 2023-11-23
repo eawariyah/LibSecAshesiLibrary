@@ -1,0 +1,85 @@
+[debug] [2023-11-22T20:39:27.947Z] ----------------------------------------------------------------------
+[debug] [2023-11-22T20:39:27.949Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\edwin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-11-22T20:39:27.950Z] CLI Version:   12.9.1
+[debug] [2023-11-22T20:39:27.950Z] Platform:      win32
+[debug] [2023-11-22T20:39:27.950Z] Node Version:  v20.10.0
+[debug] [2023-11-22T20:39:27.950Z] Time:          Wed Nov 22 2023 20:39:27 GMT+0000 (Coordinated Universal Time)
+[debug] [2023-11-22T20:39:27.950Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-22T20:39:27.955Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-22T20:39:27.956Z] > authorizing via signed-in user (edwin.awariyahpro@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Papers and School\HTML_CSS_JS_PHP\AshesiLibraryESP32
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-11-22T20:39:46.232Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2023-11-22T20:39:47.106Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2023-11-22T20:39:47.106Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project ashesilibraryesp32-fd5b8 (AshesiLibraryEsp32) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2023-11-22T20:39:48.000Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ashesilibraryesp32-fd5b8/services/firebasedatabase.googleapis.com [none]
+[debug] [2023-11-22T20:39:48.000Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ashesilibraryesp32-fd5b8/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/ashesilibraryesp32-fd5b8
+[debug] [2023-11-22T20:39:52.561Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ashesilibraryesp32-fd5b8/services/firebasedatabase.googleapis.com 200
+[debug] [2023-11-22T20:39:52.561Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ashesilibraryesp32-fd5b8/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2023-11-22T20:39:52.563Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/ashesilibraryesp32-fd5b8/locations/-/instances/ashesilibraryesp32-fd5b8-default-rtdb [none]
+[debug] [2023-11-22T20:39:56.830Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/ashesilibraryesp32-fd5b8/locations/-/instances/ashesilibraryesp32-fd5b8-default-rtdb 200
+[debug] [2023-11-22T20:39:56.830Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/ashesilibraryesp32-fd5b8/locations/-/instances/ashesilibraryesp32-fd5b8-default-rtdb {"name":"projects/185836313770/locations/us-central1/instances/ashesilibraryesp32-fd5b8-default-rtdb","project":"projects/185836313770","databaseUrl":"https://ashesilibraryesp32-fd5b8-default-rtdb.firebaseio.com","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2023-11-22T20:40:00.248Z] >>> [apiv2][query] GET https://ashesilibraryesp32-fd5b8-default-rtdb.firebaseio.com/.settings/rules.json [none]
+[debug] [2023-11-22T20:40:00.973Z] <<< [apiv2][status] GET https://ashesilibraryesp32-fd5b8-default-rtdb.firebaseio.com/.settings/rules.json 200
+[debug] [2023-11-22T20:40:00.974Z] <<< [apiv2][body] GET https://ashesilibraryesp32-fd5b8-default-rtdb.firebaseio.com/.settings/rules.json [stream]
+[info] +  Database Rules for ashesilibraryesp32-fd5b8-default-rtdb have been written to database.rules.json. 
+[info] Future modifications to database.rules.json will update Realtime Database Security Rules when you run
+[info] firebase deploy.
+[info] 
+=== Hosting Setup
+[debug] [2023-11-22T20:40:00.978Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ashesilibraryesp32-fd5b8 [none]
+[debug] [2023-11-22T20:40:01.759Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ashesilibraryesp32-fd5b8 200
+[debug] [2023-11-22T20:40:01.760Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ashesilibraryesp32-fd5b8 {"projectId":"ashesilibraryesp32-fd5b8","projectNumber":"185836313770","displayName":"AshesiLibraryEsp32","name":"projects/ashesilibraryesp32-fd5b8","resources":{"hostingSite":"ashesilibraryesp32-fd5b8","realtimeDatabaseInstance":"ashesilibraryesp32-fd5b8-default-rtdb"},"state":"ACTIVE","etag":"1_4db1d661-717a-43ec-95f4-0ac05ad888c9"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2023-11-22T20:40:19.188Z] ----------------------------------------------------------------------
+[debug] [2023-11-22T20:40:19.191Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\edwin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-11-22T20:40:19.191Z] CLI Version:   12.9.1
+[debug] [2023-11-22T20:40:19.191Z] Platform:      win32
+[debug] [2023-11-22T20:40:19.191Z] Node Version:  v20.10.0
+[debug] [2023-11-22T20:40:19.192Z] Time:          Wed Nov 22 2023 20:40:19 GMT+0000 (Coordinated Universal Time)
+[debug] [2023-11-22T20:40:19.192Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-22T20:40:19.197Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-22T20:40:19.197Z] > authorizing via signed-in user (edwin.awariyahpro@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Papers and School\HTML_CSS_JS_PHP\AshesiLibraryESP32
+
