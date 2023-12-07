@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warren Library</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #8B0000;
+        }
+
+        header {
+            background-color: #8B0000;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .library-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            display: inline-block;
+            padding: 0 10px;
+        }
+
+        /* Your existing styles here */
+
+        /* Additional styles for the register section */
+        .login-register-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto; /* Center the box */
+            background-image: url('Library.jpeg');
+            /* background-repeat: no-repeat; */
+            /* background-size: cover; */
+            background-position: center;
+        }
+
+        .register-form {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            margin: 10px;
+            background-color: #fff; /* Gray background */
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 2%;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            margin-bottom: 100px;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 10px;
+            border: 1px solid #8B0000;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #8B0000; /* Red wine background */
+            color: #fff;
+            padding: 10px 10% 10px 10%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;;
+        }
+
+        .login-link {
+            margin-top: 20px;
+            text-align: center;
+            color: #000; /* Change text color to black */
+        }
+
+        .login-link a,
+        .login-link a:visited {
+            color: #8B0000;
+        }
+
+        /* Additional styles for the contact button */
+        .contact-button {
+            background-color: #8B0000;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input{
+            width: 100%;
+        }
+
+        .btn-container{
+            /* display: flex; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        
+            margin-top: 20px; /* Adjust the margin as needed */
+            background-color: redwine; /* Initial background color */
+            color: white; /* Initial text color */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Add a smooth transition effect */
+        }
+
+        button:hover {
+            background-color: white; /* New background color on hover */
+            color: #8B0000ed; /* New text color on hover */
+            transition: 0.5s ease;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="ashesi-logo.png" alt="Ashesi Logo">
+            <div class="library-name">Warren Library Register Page</div>
+        </div>
+        <button class="contact-button">Contact Us</button>
+    </header>
+
+    <div class="login-register-section">
+        <div class="register-form">
+            <h2>Register</h2>
+            <div class="form-group">
+                <label for="userType">Register as:</label>
+                <select id="userType">
+                    <option value="Librarian">Librarian</option>
+                    <option value="student">Student</option>
+                    <option value="staff">Staff/Faculty</option>
+                    <option value="Faculty Itern">Faculty Itern</option>
+                    <option value="guest">Guest</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+            <div class="btn-container">
+                <button onclick="register()">Register</button>
+            </div>
+
+            <div class="login-link">
+                <p>Already have an account? <a href="#">Login</a></p>
+            </div>
+            
+        </div>
+
+        
+    </div>
+
+   
+    <script>
+        // Add JavaScript functionality as needed
+        function register() {
+            // Implement registration functionality
+            alert('Register button clicked!');
+        }
+    </script>
+</body>
+</html>

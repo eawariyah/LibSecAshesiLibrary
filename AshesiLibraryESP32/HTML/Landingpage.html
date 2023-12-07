@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warren Library</title>
+    <link rel="stylesheet" href="../CSS/mainCSS.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navigation">
+        <div class="logo">
+          <img src="../Resources/ashesi-logo.png" alt="Ashesi Logo" />
+          <div class="library-name" style="color: white">WARREN LIBRARY</div>
+        </div>
+        <div>
+          <button class="FirstButtons">Contact Us</button>
+          <button class="FirstButtons">Login/Register</button>
+          <div class="search-tab" contenteditable="true"></div>
+        </div>
+      </div>
+      <div class="catalog-section">
+        <select class="box">
+          <option value="title">Library Catalog</option>
+          <option value="title">Title</option>
+          <option value="author">Author</option>
+          <option value="subject">Subject</option>
+          <option value="isbn">ISBN</option>
+          <option value="series">Series</option>
+          <option value="issn">ISSN</option>
+        </select>
+        <input type="text" class="box" placeholder="Search for a book" />
+        <select class="box">
+          <option value="all-libraries">Libraries</option>
+          <option value="ashesi">Ashesi University</option>
+          <option value="others">Others</option>
+        </select>
+        <!-- <button class="search-button">Q</button> -->
+      </div>
+
+      <div class="buttonRow">
+        <button class="button">Advanced Search</button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          viewBox="0 0 50 50"
+          fill="none"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M25 2.5C25.663 2.5 26.2989 2.76339 26.7678 3.23223C27.2366 3.70107 27.5 4.33696 27.5 5V45C27.5 45.663 27.2366 46.2989 26.7678 46.7678C26.2989 47.2366 25.663 47.5 25 47.5C24.337 47.5 23.7011 47.2366 23.2322 46.7678C22.7634 46.2989 22.5 45.663 22.5 45V5C22.5 4.33696 22.7634 3.70107 23.2322 3.23223C23.7011 2.76339 24.337 2.5 25 2.5Z"
+            fill="#F8F8F8"
+          />
+        </svg>
+        <button class="button">Course Reserves</button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          viewBox="0 0 50 50"
+          fill="none"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M25 2.5C25.663 2.5 26.2989 2.76339 26.7678 3.23223C27.2366 3.70107 27.5 4.33696 27.5 5V45C27.5 45.663 27.2366 46.2989 26.7678 46.7678C26.2989 47.2366 25.663 47.5 25 47.5C24.337 47.5 23.7011 47.2366 23.2322 46.7678C22.7634 46.2989 22.5 45.663 22.5 45V5C22.5 4.33696 22.7634 3.70107 23.2322 3.23223C23.7011 2.76339 24.337 2.5 25 2.5Z"
+            fill="#F8F8F8"
+          />
+        </svg>
+        <button class="button">Recent Comments</button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          viewBox="0 0 50 50"
+          fill="none"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M25 2.5C25.663 2.5 26.2989 2.76339 26.7678 3.23223C27.2366 3.70107 27.5 4.33696 27.5 5V45C27.5 45.663 27.2366 46.2989 26.7678 46.7678C26.2989 47.2366 25.663 47.5 25 47.5C24.337 47.5 23.7011 47.2366 23.2322 46.7678C22.7634 46.2989 22.5 45.663 22.5 45V5C22.5 4.33696 22.7634 3.70107 23.2322 3.23223C23.7011 2.76339 24.337 2.5 25 2.5Z"
+            fill="#F8F8F8"
+          />
+        </svg>
+        <button class="button">Announcements</button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          viewBox="0 0 50 50"
+          fill="none"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M25 2.5C25.663 2.5 26.2989 2.76339 26.7678 3.23223C27.2366 3.70107 27.5 4.33696 27.5 5V45C27.5 45.663 27.2366 46.2989 26.7678 46.7678C26.2989 47.2366 25.663 47.5 25 47.5C24.337 47.5 23.7011 47.2366 23.2322 46.7678C22.7634 46.2989 22.5 45.663 22.5 45V5C22.5 4.33696 22.7634 3.70107 23.2322 3.23223C23.7011 2.76339 24.337 2.5 25 2.5Z"
+            fill="#F8F8F8"
+          />
+        </svg>
+        <button class="button">Institutional Repository</button>
+      </div>
+    </header>
+    <div class="mainBody">
+      <div class="leftSection">
+        <div class="leftField">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+          >
+            <path
+              d="M8.33334 35C7.41667 35 6.63167 34.6733 5.97834 34.02C5.325 33.3667 4.99889 32.5822 5 31.6667V8.33334C5 7.41667 5.32667 6.63167 5.98 5.97834C6.63334 5.325 7.41778 4.99889 8.33334 5H26.6667L35 13.3333V31.6667C35 32.5833 34.6733 33.3683 34.02 34.0217C33.3667 34.675 32.5822 35.0011 31.6667 35H8.33334ZM11.6667 28.3333H28.3333V25H11.6667V28.3333ZM11.6667 21.6667H28.3333V18.3333H11.6667V21.6667ZM25 15H31.6667L25 8.33334V15ZM11.6667 15H20V11.6667H11.6667V15Z"
+              fill="#800000"
+            />
+          </svg>
+          <h1
+            style="
+              color: #000;
+              text-align: center;
+              font-family: Inter;
+              font-size: 30px;
+              font-style: normal;
+              font-weight: 800;
+              line-height: normal;
+            "
+          >
+            Library News
+          </h1>
+        </div>
+      </div>
+      <div class="centerSection">
+        <div class="centerField">
+          <img
+            style="width: 100%"
+            src="../Resources/LibraryOverView.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="rightSection">
+        <div class="rightField"></div>
+      </div>
+    </div>
+  </body>
+</html>

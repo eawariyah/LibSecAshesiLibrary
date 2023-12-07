@@ -1,0 +1,145 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff; /* White background */
+  color: #8b0000; /* Red wine text color */
+}
+
+header {
+  background-color: #8b0000; /* Red wine header background */
+  color: #fff; /* White text color */
+  padding: 15px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logo img {
+  height: 60px; /* Adjust as needed */
+  margin-right: 10px;
+}
+
+.library-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000; /* Black text color */
+  /* Red wine to white gradient */
+  display: inline-block; /* Ensure the background covers the text */
+  padding: 0 10px; /* Add padding to create space around the text */
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 20px; /* Added padding to align with login/Register */
+}
+
+.button,
+.search-icon {
+  color: #fff; /* White text color */
+  background-color: #8b0000; /* Red wine button background */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-icon {
+  margin-left: 10px; /* Adjusted margin to move closer to login/register */
+}
+
+.search-tab {
+  width: 300px; /* Adjust as needed */
+  padding: 10px;
+  border: 1px solid #8b0000; /* Red wine border */
+  border-radius: 5px;
+  margin-left: 10px; /* Adjusted margin */
+}
+
+.catalog-section {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.box {
+  flex: 1;
+  margin-bottom: 10px; /* Added margin */
+  margin-right: 10px; /* Added margin */
+  padding: 10px;
+  border: 1px solid #8b0000; /* Red wine border */
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.search-button {
+  flex: 0.2; /* Adjusted width to make it smaller */
+  margin-bottom: 10px; /* Added margin */
+  padding: 10px;
+  background-color: #8b0000; /* Red wine background */
+  border: 1px solid #fff; /* White border */
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #fff; /* White text color */
+}
+
+.button {
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.buttonRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.FirstButtons {
+  font-family: Inter;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.mainBody {
+  display: flex;
+  flex-direction: row;
+}
+.leftSection {
+  width: 28%;
+  height: 999px;
+  flex-shrink: 0;
+  border: 1px solid #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+.leftField {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+.centerSection {
+  width: 44%;
+  height: 999px;
+  flex-shrink: 0;
+  border: 1px solid #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+.rightSection {
+  width: 28%;
+  height: 999px;
+  flex-shrink: 0;
+  border: 1px solid #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}

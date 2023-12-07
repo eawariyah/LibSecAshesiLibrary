@@ -9,7 +9,12 @@
 MFRC522 rfid(SS_PIN, RST_PIN);
 
 /* Firebase Configuration */
-///I have put the values in the WhatsApp group 
+#define WIFI_SSID "###"
+#define WIFI_PASSWORD "###"
+#define API_KEY "###"
+#define DATABASE_URL "###"
+#define USER_EMAIL "###"
+#define USER_PASSWORD "###"
 
 FirebaseData fbdo;
 FirebaseAuth auth;

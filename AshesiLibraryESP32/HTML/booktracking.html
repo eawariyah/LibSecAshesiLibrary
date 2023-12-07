@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tracking and Alerting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #7B002C;
+            color: #fff;
+        }
+
+        .header img {
+            width: 50px;
+            height: auto;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 300px;
+            background: url('library-building.jpg') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .resources-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .resource-box {
+            flex: 1;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: #7B002C;
+        }
+
+        button {
+            background-color: #7B002C;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .logo {
+            background-image: url('ashesi-logo.png');
+            width: 250px;
+            height: 70px;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo"></div>
+        <div>
+            <a href="#">Contact Us</a>
+            <a href="#">Register/Login</a>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <h1>ASHESI WARREN LIBRARY</h1>
+    </div>
+
+    </div>
+
+    <div class="container">
+        <h1>Book Tracking and Alerting</h1>
+        <div class="book-list">
+            <ul id="tracked-books-list">
+                <!-- Book entries will be dynamically added here -->
+            </ul>
+        </div>
+        <button id="alert-button">Trigger Alert</button>
+    </div>
+
+    <script>
+        const trackedBooksList = document.getElementById("tracked-books-list");
+        const alertButton = document.getElementById("alert-button");
+
+        // Function to add a new tracked book entry
+        function addTrackedBook(title, author, timestamp) {
+            const bookEntry = document.createElement("li");
+            bookEntry.innerHTML = `
+                <div>
+                    <strong>Title:</strong> ${title}
+                    <br>
+                    <strong>Author:</strong> ${author}
+                </div>
+                <div>
+                    <strong>Timestamp:</strong> ${timestamp}
+                </div>
+            `;
+            trackedBooksList.appendChild(bookEntry);
+        }
+
+        // Simulate a tracked book being detected
+        function simulateTrackedBook() {
+            const book = {
+                title: "Software Engineering, TENTH edition",
+                author: "Ian Sommerville",
+                timestamp: new Date().toLocaleString()
+            };
+            addTrackedBook(book.title, book.author, book.timestamp);
+            triggerAlert();
+        }
+
+        // Function to trigger an alert when a book leaves the library
+        function triggerAlert() {
+            alert("Alert: Book moved without proper checkout!");
+        }
+
+        // Add an event listener to the "Trigger Alert" button
+        alertButton.addEventListener("click", simulateTrackedBook);
+    </script>
+</body>
+
+</html>

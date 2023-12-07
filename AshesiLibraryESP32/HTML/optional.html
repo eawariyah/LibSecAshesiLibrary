@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: #7B002C; /* Ashesi wine red color */
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            color: #7B002C; /* Ashesi wine red color */
+        }
+
+        .login-form {
+            margin-top: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #7B002C; /* Ashesi wine red color */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Placeholder for Ashesi University logo */
+        .logo {
+            background-image: url('ashesi-logo.png'); /* You should replace this URL with the actual image path */
+            width: 150px;
+            height: 50px;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo"></div>
+        <h1>My Student Library Account</h1>
+
+        <div class="section">
+            <div class="section-title">Checked Out</div>
+            <!-- Content for checked-out items -->
+        </div>
+
+        <div class="section">
+            <div class="section-title">Renew Books</div>
+            <!-- Content for renewing books -->
+        </div>
+
+        <div class="section">
+            <div class="section-title">Holds & Requests</div>
+            <!-- Content for managing holds and requests -->
+        </div>
+    </div>
+
+    <script>
+        // You can add JavaScript for user authentication and functionality here
+        const loginButton = document.getElementById("login-button");
+        loginButton.addEventListener("click", () => {
+            // Perform user login/authentication here
+        });
+    </script>
+</body>
+</html>

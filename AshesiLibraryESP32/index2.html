@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script src="js/index.js" type="text/javascript"></script>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashesi Koha Library Management System - Librarian Homepage</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 8px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Libsec-Warren Management System - Librarian Homepage</h1>
+
+    <div>
+      <label for="bookRFID">Book RFID:</label>
+      <input type="text" id="bookRFID" />
+      <button onclick="addBook()">Add Book</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Book RFID</th>
+          <th>Approval</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="bookList"></tbody>
+    </table>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+    <script>
+      // Firebase configuration and functions (as in the provided code)
+
+      function addBook() {
+        // Add book logic (as in the provided code)
+      }
+
+      // Additional functions for editing and deleting books (as in the provided code)
+
+      displayBooks();
+    </script>
+  </body>
+</html>

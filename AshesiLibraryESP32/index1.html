@@ -41,6 +41,22 @@
     <div>
       <label for="bookRFID">Book RFID:</label>
       <input type="text" id="bookRFID" />
+
+      <label for="bookName">Name:</label>
+      <input type="text" id="bookName" />
+
+      <label for="bookSubject">Subject:</label>
+      <input type="text" id="bookSubject" />
+
+      <label for="assignedLibrarian">Assigned Librarian:</label>
+      <input type="text" id="bookAssignedLibrarian" />
+
+      <label for="assignedStudent">Assigned Student:</label>
+      <input type="text" id="bookAssignedStudent" />
+
+      <label for="assignedDuration">Assigned Duration:</label>
+      <input type="text" id="bookAssignedDuration" />
+
       <button onclick="addBook()">Add Book</button>
     </div>
 
@@ -48,6 +64,11 @@
       <thead>
         <tr>
           <th>Book RFID</th>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>Assigned Librarian</th>
+          <th>Assigned Student</th>
+          <th>Assigned Duration</th>
           <th>Approval</th>
           <th>Buzzer Status</th>
           <th>Action</th>
@@ -76,17 +97,48 @@
 
       function addBook() {
         const bookRFID = document.getElementById("bookRFID").value;
-        if (!bookRFID) {
-          alert("Please enter a valid Book RFID");
+        const bookName = document.getElementById("bookName").value;
+        const bookSubject = document.getElementById("bookSubject").value;
+        const bookAssignedLibrarian = document.getElementById(
+          "bookAssignedLibrarian"
+        ).value;
+
+        const bookAssignedStudent = document.getElementById(
+          "bookAssignedStudent"
+        ).value;
+
+        const bookAssignedDuration = document.getElementById(
+          "bookAssignedDuration"
+        ).value;
+
+        if (
+          !bookRFID ||
+          !bookName ||
+          !bookSubject ||
+          !bookAssignedLibrarian ||
+          !bookAssignedStudent ||
+          !bookAssignedDuration
+        ) {
+          alert("Please enter valid information for all fields");
           return;
         }
 
         database.ref(`LibraryRecords/${bookRFID}`).set({
+          name: bookName,
+          subject: bookSubject,
+          assignedLibrarian: bookAssignedLibrarian,
+          assignedStudent: bookAssignedStudent,
+          assignedDuration: bookAssignedDuration,
           approval: false,
           buzzerStatus: false,
         });
 
         document.getElementById("bookRFID").value = "";
+        document.getElementById("bookName").value = "";
+        document.getElementById("bookSubject").value = "";
+        document.getElementById("bookAssignedLibrarian").value = "";
+        document.getElementById("bookAssignedStudent").value = "";
+        document.getElementById("bookAssignedDuration").value = "";
         displayBooks();
       }
 
@@ -103,10 +155,15 @@
               const row = document.createElement("tr");
               row.innerHTML = `
                             <td>${book.key}</td>
+                            <td>${bookData.name}</td>
+                            <td>${bookData.subject}</td>
+                            <td>${bookData.assignedLibrarian}</td>
+                            <td>${bookData.assignedStudent}</td>
+                            <td>${bookData.assignedDuration}</td>
                             <td>${bookData.approval}</td>
                             <td>${bookData.buzzerStatus}</td>
                             <td>
-                              <button onclick="editBook('${book.key}', ${bookData.approval}, ${bookData.buzzerStatus})">Edit</button>
+                              <button onclick="editBook('${book.key}', '${bookData.name}', '${bookData.subject}', '${bookData.assignedLibrarian}', '${bookData.assignedStudent}', '${bookData.assignedDuration}', ${bookData.approval}, ${bookData.buzzerStatus})">Edit</button>
                               <button onclick="deleteBook('${book.key}')">Delete</button>
                             </td>
                         `;
@@ -115,7 +172,20 @@
           });
       }
 
-      function editBook(bookRFID, currentApproval, currentBuzzerStatus) {
+      function editBook(
+        bookRFID,
+        currentName,
+        currentSubject,
+        currentApproval,
+        currentassignedDuration,
+        currentassignedStudent,
+        currentassignedLibrarian,
+        currentBuzzerStatus
+      ) {
+        const newName = prompt(`Current Name: ${currentName}\nEnter new Name:`);
+        const newSubject = prompt(
+          `Current Subject: ${currentSubject}\nEnter new Subject:`
+        );
         const newApproval = prompt(
           `Current Approval: ${currentApproval}\nEnter new Approval:`
         );
@@ -123,8 +193,30 @@
           `Current Buzzer Status: ${currentBuzzerStatus}\nEnter new Buzzer Status:`
         );
 
-        if (newApproval !== null && newBuzzerStatus !== null) {
+        const assignedDuration = prompt(
+          `Current borrow time allowance: ${currentassignedDuration}\nEnter new time allowance:`
+        );
+
+        const assignedStudent = prompt(
+          `Current assigned student: ${currentassignedStudent}\nNew student name:`
+        );
+
+        const assignedLibrarian = prompt(
+          `Current assigned librarian: ${currentassignedLibrarian}\nNew Librarian Name:`
+        );
+
+        if (
+          newName !== null &&
+          newSubject !== null &&
+          newApproval !== null &&
+          newBuzzerStatus !== null
+        ) {
           database.ref(`LibraryRecords/${bookRFID}`).update({
+            name: newName,
+            subject: newSubject,
+            assignedLibrarian: assignedLibrarian,
+            assignedStudent: assignedStudent,
+            assignedDuration: assignedDuration,
             approval: newApproval === "true",
             buzzerStatus: newBuzzerStatus === "true",
           });
